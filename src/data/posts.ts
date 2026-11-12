@@ -8,6 +8,13 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    title: '机器人数据从哪来：五种采集方式一文看懂',
+    description:
+      '从程序员视角梳理具身智能里五种常见数据采集方式：真机遥操作、仿真、UMI、Ego 与全模态采集服，以及它们如何接力使用。',
+    pubDate: '2026-11-12',
+    href: '/2026/11/12/robot-data-collection-methods/',
+  },
+  {
     title: '有主线的地牢',
     description:
       '用 seed 生成带主线、支线和钥匙门的房间图：约束、主线选择栈、短路比和钥匙可达性。',
