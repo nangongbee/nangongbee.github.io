@@ -5,9 +5,10 @@ interface Props {
   title: string;
   description: string;
   path: string;
+  noindex?: boolean;
 }
 
-const { title, description, path } = Astro.props;
+const { title, description, path, noindex = false } = Astro.props;
 const site = 'https://wuyingzhen.github.io';
 const canonical = new URL(path, site).toString();
 const fullTitle = title === 'Tim Wu' ? title : `${title} · Tim Wu`;
@@ -16,7 +17,6 @@ const nav = [
   ['/about/', 'About'],
   ['/projects/', 'Projects'],
   ['/blog/', 'Blog'],
-  ['/experience/', 'Experience'],
   ['/contact/', 'Contact'],
 ];
 
@@ -27,7 +27,7 @@ const person = {
   url: site,
   jobTitle: 'Software Engineer',
   description:
-    'Software engineer focused on reliable systems: backend architecture, AI infrastructure, and robotics software.',
+    'I build software systems with a focus on architecture, reliability, and real-world engineering.',
   sameAs: ['https://github.com/wuyingzhen'],
 };
 ---
@@ -39,6 +39,7 @@ const person = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
     <link rel="canonical" href={canonical} />
     <link rel="alternate" type="application/rss+xml" title="Tim Wu" href="/rss.xml" />
     <meta property="og:type" content="website" />

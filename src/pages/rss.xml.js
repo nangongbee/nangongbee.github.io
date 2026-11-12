@@ -5,7 +5,7 @@ export function GET(context) {
   return rss({
     title: 'Tim Wu',
     description:
-      'Engineering notes on backend systems, with learning notes labeled as such.',
+      'Technical notes on software architecture, systems engineering, and practical implementation.',
     site: context.site,
     items: posts.map((post) => ({
       title: post.title,

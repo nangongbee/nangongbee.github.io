@@ -1,33 +1,55 @@
 ---
 import Base from '../layouts/Base.astro';
+import { projects } from '../data/projects';
 ---
 
 <Base
   title="Projects"
-  description="Public projects by Tim Wu. Representative backend work is described only where a public repository exists."
+  description="Engineering projects, experiments, and technical explorations."
   path="/projects/"
 >
   <h1>Projects</h1>
+  <p>Engineering projects, experiments, and technical explorations.</p>
+  <p>Projects are documented around their architecture, implementation details, and engineering trade-offs.</p>
+
+  {
+    projects.length === 0 ? (
+      <p>New projects will be added as they are ready for public documentation.</p>
+    ) : (
+      projects.map((project) => (
+        <article class="card">
+          <h2>{project.title}</h2>
+          <h3>Project Overview</h3>
+          <p>{project.overview}</p>
+          <h3>Problem &amp; Goals</h3>
+          <p>{project.problem}</p>
+          <h3>Architecture</h3>
+          <p>{project.architecture}</p>
+          <h3>Key Engineering Decisions</h3>
+          <p>{project.decisions}</p>
+          <h3>Implementation Details</h3>
+          <p>{project.implementation}</p>
+          <h3>Technology Stack</h3>
+          <p>{project.stack}</p>
+          <h3>Current Status &amp; Limitations</h3>
+          <p>{project.status}</p>
+          <p>
+            {project.links.map((link, index) => (
+              <>
+                {index > 0 ? ' · ' : ''}
+                <a href={link.href}>{link.label}</a>
+              </>
+            ))}
+          </p>
+        </article>
+      ))
+    )
+  }
+
+  <h2>pokerBlock</h2>
+  <p class="meta">Learning example · 2020 · JavaScript</p>
   <p>
-    This page lists public work only. Historical game-server systems I took part in are not published here as standalone repositories, so they are not given project links.
+    A small JavaScript example that records a card-game score as a hash chain. It is a learning exercise, not a production blockchain system.
   </p>
-
-  <article class="card">
-    <h2>pokerBlock</h2>
-    <p class="meta">Learning · 2020 · JavaScript</p>
-    <p>
-      A small program that uses a card-game score sheet to show a hash chain and a difficulty target. It was a way to make a block concrete. It is not a blockchain system.
-    </p>
-    <p>
-      I wrote the demo in one pass: block linking, SHA-256, and a nonce loop. There is no network, no persistence, and no claim beyond the example.
-    </p>
-    <p><a href="https://github.com/wuyingzhen/pokerBlock">github.com/wuyingzhen/pokerBlock</a></p>
-  </article>
-
-  <article class="card">
-    <h2>What is not listed</h2>
-    <p>
-      Forks with no changes of mine, empty repositories, and private work are omitted. A ROS 2 simulation exercise exists, and it is still private because perception and voice are not implemented. It will be linked if it becomes a public project.
-    </p>
-  </article>
+  <p><a href="https://github.com/wuyingzhen/pokerBlock">Source code</a></p>
 </Base>

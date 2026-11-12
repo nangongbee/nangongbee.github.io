@@ -1,26 +1,47 @@
 ---
 import Base from '../layouts/Base.astro';
+import { posts } from '../data/posts';
 ---
 
 <Base
   title="Tim Wu"
-  description="Software engineer focused on reliable systems: backend architecture, AI infrastructure, and robotics software."
+  description="I build software systems with a focus on architecture, reliability, and real-world engineering."
   path="/"
 >
   <p class="kicker">Software Engineer</p>
   <h1>Tim Wu</h1>
   <p class="kicker">Backend Systems · AI Systems · Robotics</p>
   <p class="lede">
-    I am a software engineer focused on building reliable software systems.
+    I build software systems with a focus on architecture, reliability, and real-world engineering.
   </p>
-  <p>
-    My engineering interests include backend architecture, distributed systems, C++ and Linux, real-time communication, AI infrastructure, and robotics software.
-  </p>
-  <p>
-    I enjoy designing system boundaries, defining communication protocols, and building reliable services that connect devices, software, and intelligent applications.
-  </p>
-  <p>Currently exploring AI systems, real-time voice interaction, intelligent hardware, and ROS 2.</p>
-  <p>
-    <a href="/about/">About</a> · <a href="/projects/">Projects</a> · <a href="https://github.com/wuyingzhen">GitHub</a>
-  </p>
+
+  <h2>Engineering Focus</h2>
+  <h3>Backend Systems</h3>
+  <p>Backend architecture, distributed systems, service communication, and reliable server-side infrastructure.</p>
+  <h3>C++ &amp; Linux</h3>
+  <p>Systems programming, concurrency, networking, performance analysis, and low-level engineering.</p>
+  <h3>AI Systems</h3>
+  <p>AI application architecture, agent orchestration, real-time voice interaction, and model integration.</p>
+  <h3>Robotics Software</h3>
+  <p>ROS 2, robotics middleware, device communication, and the software infrastructure behind intelligent machines.</p>
+
+  <h2>Selected Work</h2>
+  <p>A collection of engineering projects and technical explorations. Each project focuses on practical implementation, system design, and engineering decisions.</p>
+  <p>Projects are being organized and will be published as they are ready.</p>
+  <p><a href="/projects/">Projects</a></p>
+
+  <h2>Latest Writing</h2>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={post.href}>{post.title}</a>
+          <div class="meta">
+            {post.pubDate}
+            {post.archived ? ' · Archived' : ''}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
 </Base>
