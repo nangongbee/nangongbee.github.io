@@ -8,6 +8,13 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    title: '有主线的地牢',
+    description:
+      '用 seed 生成带主线、支线和钥匙门的房间图：约束、取舍，以及和 Rooms and Mazes 的差别。',
+    pubDate: '2026-11-12',
+    href: '/2026/11/12/dungeon-with-a-main-path/',
+  },
+  {
     title: '世界这么大',
     description: 'Archived note from the previous version of this site.',
     pubDate: '2019-12-10',
