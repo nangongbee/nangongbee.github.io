@@ -1,0 +1,113 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f6f3;
+  --paper: #fffdf8;
+  --ink: #1c1915;
+  --muted: #5e584f;
+  --line: #e4dfd6;
+  --accent: #8c3b2a;
+  --max: 42rem;
+}
+
+* { box-sizing: border-box; }
+
+html { background: var(--bg); }
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.65;
+}
+
+a { color: var(--accent); text-underline-offset: 0.18em; }
+a:hover { color: var(--ink); }
+
+.wrap {
+  width: min(var(--max), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+header.site {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+
+header.site .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding: 1rem 0;
+}
+
+.brand {
+  color: var(--ink);
+  font-weight: 650;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+
+nav { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; }
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.92rem;
+}
+
+nav a[aria-current="page"], nav a:hover { color: var(--ink); }
+
+main { padding: 2.5rem 0 4rem; }
+
+h1, h2, h3 { line-height: 1.25; font-weight: 650; }
+
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); margin: 0 0 0.4rem; }
+
+.kicker {
+  margin: 0 0 1.25rem;
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+
+.lede { font-size: 1.25rem; }
+
+h2 { margin-top: 2.2rem; font-size: 1.45rem; }
+
+ul { padding-left: 1.2rem; }
+li + li { margin-top: 0.35rem; }
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  margin: 1rem 0;
+}
+
+.card h2, .card h3 { margin-top: 0; }
+
+.meta {
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.85rem;
+}
+
+footer.site {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.85rem;
+}
+
+footer.site .wrap { padding: 1.25rem 0 2rem; }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+}

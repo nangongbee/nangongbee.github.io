@@ -1,0 +1,28 @@
+---
+import Base from '../../layouts/Base.astro';
+import { posts } from '../../data/posts';
+---
+
+<Base
+  title="Blog"
+  description="Engineering notes by Tim Wu. Learning notes are labeled as such."
+  path="/blog/"
+>
+  <h1>Blog</h1>
+  <p>
+    Notes here are the long-term copy. New posts will be markdown in this repository, with a problem, a design choice, and a conclusion.
+  </p>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <a href={post.href}>{post.title}</a>
+          <div class="meta">
+            {post.pubDate}
+            {post.archived ? ' · Archived' : ''}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

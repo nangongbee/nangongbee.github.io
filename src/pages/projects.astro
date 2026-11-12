@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Projects"
+  description="Public projects by Tim Wu. Representative backend work is described only where a public repository exists."
+  path="/projects/"
+>
+  <h1>Projects</h1>
+  <p>
+    This page lists public work only. Historical game-server systems I took part in are not published here as standalone repositories, so they are not given project links.
+  </p>
+
+  <article class="card">
+    <h2>pokerBlock</h2>
+    <p class="meta">Learning · 2020 · JavaScript</p>
+    <p>
+      A small program that uses a card-game score sheet to show a hash chain and a difficulty target. It was a way to make a block concrete. It is not a blockchain system.
+    </p>
+    <p>
+      I wrote the demo in one pass: block linking, SHA-256, and a nonce loop. There is no network, no persistence, and no claim beyond the example.
+    </p>
+    <p><a href="https://github.com/wuyingzhen/pokerBlock">github.com/wuyingzhen/pokerBlock</a></p>
+  </article>
+
+  <article class="card">
+    <h2>What is not listed</h2>
+    <p>
+      Forks with no changes of mine, empty repositories, and private work are omitted. A ROS 2 simulation exercise exists, and it is still private because perception and voice are not implemented. It will be linked if it becomes a public project.
+    </p>
+  </article>
+</Base>
