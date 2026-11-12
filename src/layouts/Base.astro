@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { title, description, path, noindex = false } = Astro.props;
-const site = 'https://wuyingzhen.github.io';
+const site = 'https://nangongbee.github.io';
 const canonical = new URL(path, site).toString();
 const fullTitle = title === 'Tim Wu' ? title : `${title} · Tim Wu`;
 const nav = [
@@ -28,7 +28,7 @@ const person = {
   jobTitle: 'Software Engineer',
   description:
     'I build software systems with a focus on architecture, reliability, and real-world engineering.',
-  sameAs: ['https://github.com/wuyingzhen'],
+  sameAs: ['https://github.com/nangongbee'],
 };
 ---
 
@@ -74,7 +74,7 @@ const person = {
     </main>
     <footer class="site">
       <div class="wrap">
-        <a href="https://github.com/wuyingzhen">GitHub</a>
+        <a href="https://github.com/nangongbee">GitHub</a>
         <span> · </span>
         <a href="/rss.xml">RSS</a>
       </div>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wuyingzhen.github.io/sitemap-index.xml
+Sitemap: https://nangongbee.github.io/sitemap-index.xml

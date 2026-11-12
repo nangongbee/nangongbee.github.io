@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://wuyingzhen.github.io',
+  site: 'https://nangongbee.github.io',
   trailingSlash: 'always',
   integrations: [
     sitemap({
