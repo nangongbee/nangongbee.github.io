@@ -10,7 +10,7 @@ export const posts: Post[] = [
   {
     title: '有主线的地牢',
     description:
-      '用 seed 生成带主线、支线和钥匙门的房间图：约束、取舍，以及和 Rooms and Mazes 的差别。',
+      '用 seed 生成带主线、支线和钥匙门的房间图：约束、主线选择栈、短路比和钥匙可达性。',
     pubDate: '2026-11-12',
     href: '/2026/11/12/dungeon-with-a-main-path/',
   },
