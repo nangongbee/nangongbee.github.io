@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { posts } from '../data/posts';
+import { projects } from '../data/projects';
 ---
 
 <Base
@@ -27,7 +28,17 @@ import { posts } from '../data/posts';
 
   <h2>Selected Work</h2>
   <p>A collection of engineering projects and technical explorations. Each project focuses on practical implementation, system design, and engineering decisions.</p>
-  <p><a href="/projects/">Projects</a> · <a href="/2026/11/12/dungeon-with-a-main-path/">有主线的地牢</a></p>
+  <ul>
+    {
+      projects.map((project) => (
+        <li>
+          <a href={project.links[0].href}>{project.title}</a>
+          <div class="meta">{project.overview}</div>
+        </li>
+      ))
+    }
+  </ul>
+  <p><a href="/projects/">Projects</a></p>
 
   <h2>Latest Writing</h2>
   <ul>
