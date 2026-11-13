@@ -8,6 +8,13 @@ export type Post = {
 
 export const posts: Post[] = [
   {
+    title: '采集之后：技能复用、数采中心与数据体系的运营',
+    description:
+      '从技能复用的四个层次、技能组装、数采中心定位，到平台、人和商业三方面的运营，聊机器人数据体系如何从项目制走向规模化。',
+    pubDate: '2026-11-13',
+    href: '/2026/11/13/skills-reuse-and-data-operations/',
+  },
+  {
     title: '从采到能训：机器人数据流水线的工程化',
     description:
       '从时间同步、脏数据切分、动作语言对齐、数据格式到版本追溯，拆解机器人数据从原始采集到可训练数据集的工程流程。',
